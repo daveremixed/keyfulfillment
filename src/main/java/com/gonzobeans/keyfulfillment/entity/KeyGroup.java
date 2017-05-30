@@ -21,6 +21,13 @@ public class KeyGroup {
         this.active = true;
     }
 
+    public KeyGroup(String name, String description) {
+        this.name = name;
+        this.description = description;
+        this.secret = UUID.randomUUID().toString().replaceAll("-", "");
+        this.active = true;
+    }
+
     @DynamoDBHashKey(attributeName="name")
     public String getName() {
         return name;
