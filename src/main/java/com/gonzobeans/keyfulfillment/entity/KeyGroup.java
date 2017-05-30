@@ -13,11 +13,10 @@ import java.util.UUID;
 public class KeyGroup {
     private String name;
     private String description;
-    private final String secret;
+    private String secret;
     private boolean active;
 
     public KeyGroup() {
-        this.secret = UUID.randomUUID().toString().replaceAll("-", "");
         this.active = true;
     }
 
@@ -48,8 +47,11 @@ public class KeyGroup {
     public String getSecret() {
         return secret;
     }
+    public void setSecret(String secret) {
+        this.secret = secret;
+    }
 
-    @DynamoDBAttribute(attributeName="secret")
+    @DynamoDBAttribute(attributeName="active")
     public boolean getActive() {
         return active;
     }
