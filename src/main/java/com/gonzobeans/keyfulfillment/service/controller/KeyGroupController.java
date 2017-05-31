@@ -40,7 +40,7 @@ public class KeyGroupController {
     }
 
     @RequestMapping(value="/{keyGroup}",  method=RequestMethod.PUT)
-    public @ResponseBody ServiceResponse updateKeyGroup(@PathVariable String keyGroup) {
+    public @ResponseBody ServiceResponse updateKeyGroup(@RequestBody KeyGroup keyGroup) {
         return new ErrorResponse("Not Yet Implemented");
     }
 
