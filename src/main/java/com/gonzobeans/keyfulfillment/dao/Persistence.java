@@ -1,7 +1,8 @@
 package com.gonzobeans.keyfulfillment.dao;
 
-import com.gonzobeans.keyfulfillment.entity.App;
-import com.gonzobeans.keyfulfillment.entity.KeySet;
+import com.gonzobeans.keyfulfillment.model.App;
+import com.gonzobeans.keyfulfillment.model.Key;
+import com.gonzobeans.keyfulfillment.model.KeySet;
 
 public interface Persistence {
 
@@ -16,6 +17,10 @@ public interface Persistence {
     KeySet getKeySet(String appName, String keySetName);
 
     void disableKeySet(String appName, String keySetName);
+
+    Key getKey(String appName, String keyValue);
+
+    void updateKey(String appName, Key key);
 
 
 }

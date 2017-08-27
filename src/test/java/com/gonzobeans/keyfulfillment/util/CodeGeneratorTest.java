@@ -1,6 +1,6 @@
 package com.gonzobeans.keyfulfillment.util;
 
-import com.gonzobeans.keyfulfillment.entity.CodeType;
+import com.gonzobeans.keyfulfillment.model.CodeType;
 import org.junit.Assert;
 import org.junit.Test;
 

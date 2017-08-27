@@ -1,6 +1,6 @@
-package com.gonzobeans.keyfulfillment.dao.entity;
+package com.gonzobeans.keyfulfillment.model.dao;
 
-import com.gonzobeans.keyfulfillment.entity.CodeType;
+import com.gonzobeans.keyfulfillment.model.CodeType;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

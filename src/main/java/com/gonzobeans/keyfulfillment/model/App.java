@@ -1,9 +1,11 @@
-package com.gonzobeans.keyfulfillment.entity;
+package com.gonzobeans.keyfulfillment.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class App {
     private String name;
     private String description;

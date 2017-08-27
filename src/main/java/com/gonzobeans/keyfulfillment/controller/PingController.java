@@ -1,6 +1,6 @@
-package com.gonzobeans.keyfulfillment.service.controller;
+package com.gonzobeans.keyfulfillment.controller;
 
-import com.gonzobeans.keyfulfillment.service.response.PingResponse;
+import com.gonzobeans.keyfulfillment.model.response.PingResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;

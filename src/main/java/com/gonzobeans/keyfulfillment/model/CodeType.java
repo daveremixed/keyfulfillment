@@ -1,4 +1,4 @@
-package com.gonzobeans.keyfulfillment.entity;
+package com.gonzobeans.keyfulfillment.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 

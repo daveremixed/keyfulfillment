@@ -1,4 +1,4 @@
-package com.gonzobeans.keyfulfillment.service.response;
+package com.gonzobeans.keyfulfillment.model.response;
 
 /**
  * Created by Dave on 5/28/2017.

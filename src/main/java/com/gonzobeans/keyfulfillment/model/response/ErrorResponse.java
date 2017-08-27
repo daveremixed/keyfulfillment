@@ -1,4 +1,4 @@
-package com.gonzobeans.keyfulfillment.service.response;
+package com.gonzobeans.keyfulfillment.model.response;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import org.springframework.hateoas.ResourceSupport;

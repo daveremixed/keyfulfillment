@@ -2,6 +2,8 @@ package com.gonzobeans.keyfulfillment.config;
 
 
 import com.gonzobeans.keyfulfillment.converters.RdbToAppConverter;
+import com.gonzobeans.keyfulfillment.converters.RdbToKeyConverter;
+import com.gonzobeans.keyfulfillment.converters.RdbToKeySetConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ConversionServiceFactoryBean;
@@ -22,10 +24,11 @@ public class ConversionConfig {
         return factoryBean.getObject();
     }
 
-    @Bean
     private Set<Converter> getConverters() {
         Set<Converter> converters = new HashSet<>();
         converters.add(new RdbToAppConverter());
+        converters.add(new RdbToKeySetConverter());
+        converters.add(new RdbToKeyConverter());
         return converters;
     }
 }
