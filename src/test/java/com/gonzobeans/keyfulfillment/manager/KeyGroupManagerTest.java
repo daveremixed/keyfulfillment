@@ -8,16 +8,16 @@ import org.junit.Test;
  */
 public class KeyGroupManagerTest {
 
-    private KeyGroupManager manager;
+    private AppManager manager;
 
     @Before
     public void setup() {
-        manager = new KeyGroupManager();
+        manager = new AppManager();
     }
 
     @Test
     public void createKeyGroupTest() {
-        manager.createKeyGroup("testGroup", "This is a test description.");
+        manager.createApp("testGroup", "This is a test description.");
     }
 
 

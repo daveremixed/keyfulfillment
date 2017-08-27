@@ -1,44 +1,20 @@
 package com.gonzobeans.keyfulfillment.service.response;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.gonzobeans.keyfulfillment.entity.App;
+import org.springframework.hateoas.ResourceSupport;
 
 /**
  * Created by Dave on 5/29/2017.
  */
 
-public class KeyGroupResponse extends ServiceResponse {
-    private String name;
-    private String description;
-    private String secret;
+public class KeyGroupResponse extends ResourceSupport {
 
-    public KeyGroupResponse(String name, String description) {
-        this.name = name;
-        this.description = description;
-        this.success = true;
+    private App content;
+
+    @JsonCreator
+    public KeyGroupResponse(App keyGroup) {
+        this.content = keyGroup;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getSecret() {
-        return secret;
-    }
-
-    public void setSecret(String secret) {
-        this.secret = secret;
-    }
 }

@@ -1,14 +1,18 @@
 package com.gonzobeans.keyfulfillment.service.response;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import org.springframework.hateoas.ResourceSupport;
+
 /**
  * Created by Dave on 5/29/2017.
  */
-public class ErrorResponse extends ServiceResponse {
+public class ErrorResponse extends ResourceSupport {
     private String error;
     private String details;
 
-    public ErrorResponse() {
-        this.success = false;
+    @JsonCreator
+    public ErrorResponse(Exception ex) {
+        this.error = ex.getMessage();
     }
 
     public ErrorResponse(String error) {

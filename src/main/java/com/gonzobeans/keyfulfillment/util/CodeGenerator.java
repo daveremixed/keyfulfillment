@@ -36,6 +36,10 @@ public class CodeGenerator {
         }
     }
 
+    public static String createSecret() {
+
+    }
+
     private static String generateCode(int codeSize, char[] characters) {
         StringBuilder code = new StringBuilder();
         for (int i=0; i < codeSize; i++) {

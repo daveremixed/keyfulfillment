@@ -1,95 +1,75 @@
 package com.gonzobeans.keyfulfillment.entity;
 
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
-
+import javax.persistence.Entity;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 /**
  * KeySets contain parameters for getting and distributing keys
  */
-@DynamoDBTable(tableName="KeyGroup")
+@Entity
 public class KeySet {
-    private final String keyGroupName;
-    private final String id;
-    private Date validAfterDate;
-    private Date expirationDate;
+    private String name;
+    private String appName;
+    private ZonedDateTime created;
+    private ZonedDateTime validAfterDate;
+    private ZonedDateTime expirationDate;
     private int codesUsed;
     private int maxCodes;
-    private CodeType codeType;
-    private int codeSize;
     private boolean active;
 
-    public KeySet(String  keyGroupName, String id) {
-        this.keyGroupName = keyGroupName;
-        this.id = id;
-        this.active = true;
+    public String getName() {
+        return name;
     }
 
-    @DynamoDBHashKey(attributeName="keyGroupName")
-    public String getKeyGroupName() {
-        return keyGroupName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    @DynamoDBRangeKey(attributeName="id")
-    public String getId() {
-        return id;
+    public ZonedDateTime getCreated() {
+        return created;
     }
 
-    @DynamoDBAttribute(attributeName="validAfterDate")
-    public Date getValidAfterDate() {
+    public void setCreated(ZonedDateTime created) {
+        this.created = created;
+    }
+
+    public ZonedDateTime getValidAfterDate() {
         return validAfterDate;
     }
-    public void setValidAfterDate(Date validAfterDate) {
+
+    public void setValidAfterDate(ZonedDateTime validAfterDate) {
         this.validAfterDate = validAfterDate;
     }
 
-    @DynamoDBAttribute(attributeName="expirationDate")
-    public Date getExpirationDate() {
+    public ZonedDateTime getExpirationDate() {
         return expirationDate;
     }
-    public void setExpirationDate(Date expirationDate) {
+
+    public void setExpirationDate(ZonedDateTime expirationDate) {
         this.expirationDate = expirationDate;
     }
 
-    @DynamoDBAttribute(attributeName="codesUsed")
     public int getCodesUsed() {
         return codesUsed;
     }
+
     public void setCodesUsed(int codesUsed) {
         this.codesUsed = codesUsed;
     }
 
-    @DynamoDBAttribute(attributeName="maxCodes")
     public int getMaxCodes() {
         return maxCodes;
     }
+
     public void setMaxCodes(int maxCodes) {
         this.maxCodes = maxCodes;
     }
 
-    @DynamoDBAttribute(attributeName="codeType")
-    public CodeType getCodeType() {
-        return codeType;
-    }
-    public void setCodeType(CodeType codeType) {
-        this.codeType = codeType;
-    }
-
-    @DynamoDBAttribute(attributeName="codeSize")
-    public int getCodeSize() {
-        return codeSize;
-    }
-    public void setCodeSize(int codeSize) {
-        this.codeSize = codeSize;
-    }
-
-    @DynamoDBAttribute(attributeName="active")
-    public boolean getActive() {
+    public boolean isActive() {
         return active;
     }
+
     public void setActive(boolean active) {
         this.active = active;
     }
