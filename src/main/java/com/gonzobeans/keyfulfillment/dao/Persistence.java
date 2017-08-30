@@ -16,6 +16,8 @@ public interface Persistence {
 
     KeySet getKeySet(String appName, String keySetName);
 
+    void updateKeySet(String appName, KeySet keyset);
+
     void disableKeySet(String appName, String keySetName);
 
     Key getKey(String appName, String keyValue);
