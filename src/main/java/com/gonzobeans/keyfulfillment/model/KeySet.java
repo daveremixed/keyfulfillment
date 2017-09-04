@@ -103,8 +103,6 @@ public class KeySet {
         this.maxCodes = maxCodes;
     }
 
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

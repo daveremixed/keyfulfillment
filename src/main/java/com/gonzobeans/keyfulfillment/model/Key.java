@@ -1,5 +1,6 @@
 package com.gonzobeans.keyfulfillment.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.google.common.base.MoreObjects;
@@ -13,9 +14,26 @@ public class Key {
     private String value;
     private String keySetName;
     private KeyStatus keyStatus;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
     private ZonedDateTime dateCreated;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
     private ZonedDateTime dateRedeemed;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSZ")
     private ZonedDateTime expiration;
+
+    public Key () {
+
+    }
+
+    public Key(Key key) {
+        this.appName = key.getAppName();
+        this.value = key.getValue();
+        this.keySetName = key.getKeySetName();
+        this.dateCreated = key.getDateCreated();
+        this.dateRedeemed = key.getDateRedeemed();
+        this.expiration = key.getExpiration();
+        this.keyStatus = key.getKeyStatus();
+    }
 
     private Key(Builder builder) {
         setAppName(builder.appName);

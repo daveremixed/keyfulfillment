@@ -5,12 +5,20 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.google.common.base.MoreObjects;
 
+import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 @JsonIgnoreProperties(ignoreUnknown=true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class App {
+    @Column(unique = true)
     private String name;
     private String description;
     private String secret;
+    @Enumerated(EnumType.STRING)
     private CodeType codeType;
     private Integer codeSize;
 

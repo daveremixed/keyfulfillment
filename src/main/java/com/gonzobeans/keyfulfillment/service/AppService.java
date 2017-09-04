@@ -16,7 +16,7 @@ public class AppService {
     @Autowired
     public AppService(AuthenticationService authenticationService, Persistence persistence) {
         this.authenticationService = authenticationService;
-        this.persistence = persistence;
+
     }
 
     public App createApp(String name, String description, String codeType, int codeSize){
@@ -28,7 +28,7 @@ public class AppService {
                 .withSecret(CodeGenerator.createSecret())
                 .build();
         persistence.createApp(app);
-        return app;
+        return new App();
     }
 
     public App getApp(String token) {
