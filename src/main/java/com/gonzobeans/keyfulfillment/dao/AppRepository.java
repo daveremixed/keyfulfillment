@@ -1,4 +1,4 @@
 package com.gonzobeans.keyfulfillment.dao;
 
-public class Persistence {
+public class AppRepository {
 }
